@@ -21,7 +21,7 @@ pipeline {
             steps {
                 dir("spring-angular/springboot/app"){ 
                     sh "mvn clean install"
-                    sh "docker build -t spring-angular/springboot/app ."
+                    sh "docker build -t springboot ."
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                 dir("spring-angular/angular-app"){ 
                     sh "npm install"
                     sh "npm run build --prod"
-                    sh "docker build -t spring-angular/angular-app ."
+                    sh "docker build -t angular-app ."
                 }
             }
         }
