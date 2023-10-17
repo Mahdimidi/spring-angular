@@ -16,10 +16,10 @@ services:
   mysql_db: # if you're using MySQL for the Spring backend
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpassword
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     volumes:
       - mysql_data:/var/lib/mysql
 
