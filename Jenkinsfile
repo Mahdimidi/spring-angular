@@ -39,7 +39,7 @@ pipeline {
         stage ("Run docker compose") {
             steps {
                 dir("spring-angular"){
-                    sh "docker-compose up -d"
+                    sh "docker compose up -d"
                 }
             }
         }
