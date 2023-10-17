@@ -17,21 +17,21 @@ pipeline {
             }
         }
         
-        stage ("Generate spring-angular springboot image") {
+        stage ("Generate spring-angular/springboot/app image") {
             steps {
-                dir("springboot"){ 
+                dir("spring-angular/springboot/app"){ 
                     sh "mvn clean install"
-                    sh "docker build -t springboot ."
+                    sh "docker build -t spring-angular/springboot/app ."
                 }
             }
         }
         
-        stage ("Generate spring-angular angular-app image") {
+        stage ("Generate spring-angular/angular-app image") {
             steps {
-                dir("angular-app"){ 
+                dir("spring-angular/angular-app"){ 
                     sh "npm install"
                     sh "npm run build --prod"
-                    sh "docker build -t angular-app:latest ."
+                    sh "docker build -t spring-angular/angular-app ."
                 }
             }
         }
