@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   back-spring:
-    image: back-spring:latest
+    image: springboot:latest
     ports:
       - "8080:8080"
     environment:
@@ -11,7 +9,7 @@ services:
       - mysql_db # assuming you have a MySQL database
 
   front-angular:
-    image: front-angular:latest
+    image: angular-app:latest
     ports:
       - "80:80"
 
