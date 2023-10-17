@@ -30,7 +30,7 @@ pipeline {
             steps {
                 dir("spring-angular/angular-app"){ 
                     sh "npm install"
-                    sh "npm run build --prod"
+                    sh "npm run build"
                     sh "docker build -t angular-app ."
                 }
             }
