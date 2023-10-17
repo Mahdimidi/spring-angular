@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  back-spring:
+    image: back-spring:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - mysql_db # assuming you have a MySQL database
+
+  front-angular:
+    image: front-angular:latest
+    ports:
+      - "80:80"
+
+  mysql_db: # if you're using MySQL for the Spring backend
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
