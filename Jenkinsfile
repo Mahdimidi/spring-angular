@@ -29,8 +29,6 @@ pipeline {
         stage ("Generate spring-angular/angular-app image") {
             steps {
                 dir("spring-angular/angular-app"){ 
-                    sh "npm install"
-                    sh "npm run build"
                     sh "docker build -t angular-app ."
                 }
             }
