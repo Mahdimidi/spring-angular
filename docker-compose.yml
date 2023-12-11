@@ -33,7 +33,7 @@ services:
     build: ./angular-app
     restart: always
     ports:
-      - "0.0.0.0:4200:4200"
+      - "0.0.0.0:4201:4201"
 
 # Define volumes at the top-level
 volumes:
